@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anchor</title>
+    <style>
+        html{
+            color: white;
+            background-color: black;
+            font-size: 62.5%;
+            overflow: auto;
+        }
+        .Anchor-header{
+            display: flex;
+            justify-content: space-between;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            color: blue;
+            background-color: burlywood;
+        }
+        .firstlink{
+            background-color: white;
+             border-radius: 8%;
+              font-size: 1.5rem;
+               padding: 0.8rem 1rem;
+                text-decoration: none;
+                 color: black;
+                  margin-right: 1.5rem;
+        }
+        .second-link{
+            position: absolute;
+            top: 32vw;
+            left: 20vw;
+            font-size: 3rem;
+            background-color: purple;
+            padding: 2rem;
+            border-radius: 30%;
+            background-color: rgb(74, 10, 10);
+            color: white;
+            transition: all 1.6s cubic-bezier(0.29, 0.86, 1, 1);
+        }
+        .second-link:hover{
+            background-color: white;
+            color: black;
+            transform: translatex(30%);
+            scale: 0.8;
+            rotate: 720deg;
+        }
+        .second-link:hover::after{
+            content: '>>>';
+            color: red;
+            font-size: 2rem;
+            text-align: center;
+        }
+        .mini-container{
+            background-color: rgba(78, 74, 74, 0.486);
+            border: 0.0001px solid #50506b;
+            padding: 3rem;
+            border-radius: 2rem;
+            width: 75%; 
+            font-size: 1.5rem;
+        }
+        #reg:hover{
+            background-color: burlywood;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .container-2{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+           
+        }
+        .container-1{
+            font-size: 1.5rem;
+        }
+      
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="Anchor-header">
+            <h1 style=" font-weight: 700; color: red; margin-left: 1.5rem;">Anchor <span style=" font-size: 1.2rem; right: 0.4rem; position: relative; bottom: 1rem;">it</span></h1>
+            <span style=" margin-top: 1rem;"><a href="#" class="firstlink" >😗 Register</a></span>
+            
+        </div>
+        <div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <img src="anchor-image.jpg" style="width: 80%; height: 40rem;"   />
+            
+        </div>
+        <!-- <p style="position: absolute; bottom: 10rem; left: 22rem; padding: 1.5rem; background-color: black; border-radius: 30%;" id="reg"><a href="#" class="secondlink">Anchor > ></a></p> -->
+         <a href="#" class="second-link">Anchor</a>
+        </div>
+    </header>
+    <main>
+        <h1 style="font-size: 10rem; color: burlywood; margin-left: 8rem; margin-bottom: 1.2%;">Who we are?</h1>
+        <section class="container">
+        <section class="mini-container container-1">
+           <strong style="color: red;"> Anchor </strong> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt reiciendis eius atque cumque, ratione aut quam quasi animi, non cupiditate aliquid omnis blanditiis laboriosam velit molestiae dolor quisquam repellendus ullam ipsum dolor sit amet consectetur adipisicing elit. Praesentium, voluptas!
+
+      <div style="background-color: #c7c2c27c; width: 60%; margin-top: 4rem; font-size: 1.7rem; padding: 1.5rem; border-radius: 0.65rem;">On Anchor you welfare is our top priority</div>
+        </section>
+        <div style="display: flex; justify-content: center; align-items: center; margin-top: 13rem; margin-bottom: 3rem;">
+            <a href="#" style="border-radius: 2rem; border: 1px solid white; padding: 1rem 3rem;">⏱ waitlist</a>
+        </div>
+        <section class="mini-container container-2">
+            <h2 style="margin: 0%; font-size: 6rem; color: blanchedalmond; ">Register Now!!</h2>
+            <div style="font-size: 1.5rem;">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum excepturi tenetur sit assumenda obcaecati totam ut deleniti officia, harum maiores.
+            </div>
+            <a href="$" style="background-color: azure; color: black; padding: 2rem; width: 17%; text-align: center;"> click here to register</a>
+        </section>
+        </section>
+    </main>
+</body>
+</html>
