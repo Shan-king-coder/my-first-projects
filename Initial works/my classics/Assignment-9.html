@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Homeweb</title>
+    <style>
+        *,*::after,*::before{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+            font-family: cursive;
+            overflow: auto;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+            gap: 2rem;
+            background-color: #abdfdf;
+            margin: 6rem;
+        }
+        section{
+            width: 70%;
+            border-radius: 1.5rem;
+            background-color: azure;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+           
+        }
+        .header-section__2{
+            display: flex;
+            flex-direction: column;
+
+        }
+        .header-section__1{
+            display: flex;
+            gap: 1.2rem;
+            align-items: center;
+
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+        }
+        .header-section__3{
+            font-size: 0.8rem;
+        }
+        main{
+            font-size: 1.5rem;
+        }
+        .reactions{
+            border-radius: 1rem;
+            background-color: #aaafb4;
+            padding: 0.5rem;
+        }
+        footer{
+            display: flex;
+            justify-content: flex-start;
+            gap: 3.5rem;
+            overflow: auto;
+           
+            
+        }
+        @media (max-width: 480px) {
+            section{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <header class="header">
+            <div class="header-section__1">
+                <img src="broken compass2.jpg" alt="image" style="width: 3rem; border-radius: 50%; height: 3rem; " />
+                <div class="header-section__2">
+                    <span style="font-size: 1rem; font-weight: 800;">Mary jane</span>
+                    <span style="font-size: 0.8rem; font-weight: lighter;">@maryjane</span>
+                </div>
+                <div class="header-section__3"  style="font-weight: 100;">
+                    2 days ago
+                </div>
+            </div>
+            <div class="header-section__4">🔁 Reply</div>
+        </header>
+        <main>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores in ullam quam cum voluptate, aut et doloribus dignissimos aliquam atque, quaerat aspernatur adipisci culpa ut, iure cumque a temporibus ratione.</main>
+        <footer>
+            <div class="reactions">😂 225</div>
+            <div class="reactions">♥ 146</div>
+            <div class="reactions">😡 100</div>
+            <div class="reactions">👍 87</div>
+            <div class="reactions">👎 64</div>
+        </footer>
+    </section>
+    <section>
+        <header class="header">
+            <div class="header-section__1">
+                <img src="broken compass2.jpg" alt="image"  style="width: 3rem; border-radius: 50%; height: 3rem;" />
+                <div class="header-section__2">
+                    <span style="font-size: 1rem; font-weight: 800;">John Doe</span>
+                    <span style="font-size: 0.8rem;  font-weight: lighter;">@doe</span>
+                </div>
+                <div class="header-section__3" style="font-weight: 100;">
+                9 months ago    
+                </div>
+            </div>
+            <div class="header-section__4">🔁 Reply</div>
+        </header>
+        <main>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa enim reprehenderit ratione? Facere odit explicabo nisi ipsa voluptatem. Nesciunt hic velit nisi voluptate suscipit corporis enim possimus quae magnam nemo?</main>
+        <footer>
+            <div class="reactions">😂 225</div>
+            <div class="reactions">♥ 146</div>
+            <div class="reactions">😡 100</div>
+            <div class="reactions">👍 87</div>
+            <div class="reactions">👎 64</div>
+        </footer>
+    </section>
+  
+</body>
+</html>

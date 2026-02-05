@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css pro tip</title>
+    <style>
+        *,*::after,*::before{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           
+        } 
+        .pro-tip__1{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: pink;
+            margin-bottom: 5px;
+        }
+        .box{
+            width: 50vw;
+            background-color: #f9f9f9;
+            padding: 10vmax;
+            text-align: center;
+            color: black;
+            resize: both;
+            overflow: auto;
+        }
+        .box:hover{
+            box-shadow: 12px 12px 12px rgba(0,0,0,0.1) inset, -10px -10px 10px white inset ;
+        }
+        .pro-tip__3-1{
+            font-size: 12px;
+            background-color: skyblue;
+            /* width: 850px;
+            max-width: 80%; */
+            width: min(800px, 80%);
+            padding: 20px;
+        
+
+        }
+        .pro-tip__3{
+            display: flex;
+            justify-content: center;
+            margin-top: 7vmax;
+        }
+        .button-not{
+            display: flex;
+            justify-content: center;
+            margin-top: 7vmax;
+            gap: 4vmax;
+        }
+        .not-button{
+            border-radius: 20px;
+            padding: 10px;
+            color: azure;
+            background-color: black;
+          
+        }
+        .not-button:not(:first-child) {
+            background-color: blanchedalmond;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        .has-button{
+            border-radius: 20px;
+            padding: 10px;
+            color: purple;
+            background-color: dodgerblue;
+        }
+        .button-has__1{
+            display: flex;
+            justify-content: center;
+            margin-top: 7vmax;
+            gap: 4vmax;
+        }
+        .has-button:has(a){
+         border-radius: 30px;
+           font-family: Georgia, 'Times New Roman', Times, serif;
+           background-color: white;
+           border: 2px solid red;
+        }
+        .pro-tip__6{
+            display: flex;
+            justify-content: center;
+            margin-top: 7vmax;
+            gap: 1vmax;
+        }
+       
+        .background{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: dodgerblue;
+            padding: 10px;
+        }
+        select{
+            color: blue;
+            border-radius: 10px;
+            padding: 0 2vmax;
+        }
+        body:has(option[value="dark"]:checked){
+            background: black;
+        }
+        body:has(option[value="brown"]:checked){
+            background: burlywood;
+        }
+        body:has(option[value="gradient"]:checked){
+            background: radial-gradient( circle at top left,#e3e3e3,#abac91,#87ceeb,#4f0640);
+        }
+        .pro-tip__7{
+            display: flex;
+            justify-content: center;
+            margin-top: 7vmax;
+        }
+        h1{
+            font-size: 5vmax;
+            background: linear-gradient(to bottom, red, yellow, blue, white);
+            background-clip: text;
+            color: transparent;
+        }
+     input:focus{
+        background-color: red;
+     }
+     nav{
+        background-color: aqua;
+        text-decoration: none;
+        color: bisque;
+        display: none;
+     }
+     input[value="tech"]:checked ~ nav{
+        width: 4vmax;
+        border: 1px solid black;
+        display: block;
+     }
+     input[value="email"]:focus{
+        width: 4vmax;
+        height: 6vmax;
+        border: 1px solid black;
+        background-color: beige;
+
+     }
+     #pro-tip__9{
+        display: flex;
+        justify-content: center;
+        margin-top: 7vmax;
+        background-color: ghostwhite;
+      
+     }
+    .container-holder{
+        display: flex;
+        gap: 20px;
+        width: 300px;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+    .container{
+      scroll-snap-align: center;
+        padding: 20px 30px;
+        flex-shrink: 0;
+        width: 300px;
+        background: radial-gradient(circle at top left, #000000,  #484444,  #776666,  #cfa7a7,  #ffbbbb,  #dccfcf,  #fcfbfb);
+        color: white;
+        border-radius: 14px;
+        text-align: center;
+      
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    footer{
+        align-self: flex-end;
+    }
+    .pro-tip__10{
+        display: flex;
+        justify-content: center;
+        margin: 7vmax;
+    }
+    .animation{
+        background-color: rgb(107, 107, 212);
+        padding: 10vmax;
+       animation: animation 4.5s ease 20ms 1 normal;
+      animation-play-state: paused;
+    }
+    .animation:hover{
+        animation-play-state: running;
+        animation-iteration-count: infinite;
+        color: chocolate;
+        background-color: #87ceeb;
+    }
+    @keyframes animation{
+        40%{
+            scale: 0.5;
+            color: white;
+        }
+        50%{
+            /* background: radial-gradient(circle, red purple, green, black); */
+            background: radial-gradient(circle at bottom right, #000000,  #484444,  #776666,  #cfa7a7,  #ffbbbb,  #dccfcf,  #fcfbfb);
+        }
+        60%{
+            background: radial-gradient(circle at top right, #000000,  #484444,  #776666,  #cfa7a7,  #ffbbbb,  #dccfcf,  #fcfbfb);
+        }
+       
+        100%{
+            transform: rotate(360deg);
+            scale: 1.1;
+            border-radius: 20px;
+            position: absolute;
+            color: orange;
+            background-color: rgb(148, 93, 148);
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- 1st tip on good border shadow and RESIZE property -->
+   <section class="pro-tip__1">
+    
+    <p class="box">This is a nice box</p>
+   </section>
+   <!-- 3rd tip on min property how to make the size responsive -->
+   <section class="pro-tip__3">
+    <div class="pro-tip__3-1">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, error? Sit, commodi et ullam ut iure
+     totam blanditiis ipsam at pariatur suscipit corporis asperiores corrupti. Reprehenderit, suscipit ea.
+      Odit placeat recusandae laboriosam quas alias, rerum dolores iste officia tempora fugiat expedita 
+      dolor laborum veniam quo, nam aspernatur iusto. Consectetur rerum, eius maiores quia ab error laboriosam
+       minima dolor vitae corporis explicabo eaque quibusdam repudiandae cum blanditiis! Accusamus aut veniam
+        tempora mollitia doloremque quos velit facere, eveniet recusandae maxime fugit saepe? Reiciendis vero
+         nulla cum iure quia quibusdam culpa minus obcaecati delectus. Obcaecati animi facere ipsa autem eum ea
+          libero perspiciatis! Amet ut provident beatae quis explicabo ullam esse fuga harum pariatur voluptatem
+           debitis expedita accusamus repudiandae eum, veniam reprehenderit architecto dolorem porro eligendi
+            minima? Voluptas distinctio id nobis atque qui perferendis ab, aliquam temporibus ex deserunt. Impedit
+            magni eligendi error temporibus fugiat et fuga minus, at ab, minima explicabo doloremque est? Esse non, 
+            iste dignissimos, sunt ut consequatur sapiente, perferendis delectus quidem praesentium minus amet
+             ipsum odit tempore consectetur quibusdam aperiam corporis odio suscipit error temporibus ab? Deleniti
+              eveniet beatae, dicta at eius quisquam molestias quasi libero doloremque. Explicabo nihil reprehenderit,
+               quo sit ex repellendus pariatur in quibusdam perspiciatis harum consectetur rem beatae neque magnam corrupti
+                dolore ut iste voluptates recusandae. Nulla explicabo omnis dolor maiores reprehenderit quo delectus 
+                consectetur alias minus maxime enim voluptates, tenetur porro impedit. Corrupti, quibusdam? Ea explicabo 
+                quos cupiditate natus ab eveniet dolores maiores ipsam. Vel soluta cupiditate sit tempora fugiat, inventore
+                 sapiente sequi dolore labore deleniti quaerat eum ducimus autem, deserunt, officia assumenda. Expedita amet
+                  quam sint fuga perspiciatis quaerat nobis consequatur nulla officia, modi sunt enim dolores ipsum, harum,
+                   esse tenetur exercitationem illo. Ea eveniet vero nemo, fugiat veritatis accusantium qui consectetur neque
+                    porro ex voluptas. Harum libero sunt ex inventore eum delectus.
+</div>
+</section>
+<!-- 4th tip on NOT pseudo classes -->
+   <section class="pro-tip__4">
+    <div class="button-not">
+        <button class="not-button">button</button>
+        <button class="not-button">button</button>
+        <button class="not-button">button</button>
+    </div>
+   </section>
+   <!-- 5TH tip on HAS pseudo classes -->
+   <section class="pro-tip__5">
+    <div class="button-has__1">
+    <button class="has-button"> <a href="#" class="link">link</a></button>
+    <button class="has-button"> <a href="#" class="link">link</a></button>
+    <button class="has-button"> <a href="#" class="link">link</a></button>
+    <button class="has-button">link</button>
+    <button class="has-button">link</button>
+    <button class="has-button">link</button>
+</div>
+</section>
+<!-- 6th tip on how to change the web background color on responsive screens -->
+   <section class="pro-tip__6">
+    <span class="background">background-color</span>
+    <span style="font-size: 30px;">➡</span>
+    <select>
+        <option value="light">light mode</option>
+        <option value="dark">Dark mode</option>
+        <option value="brown">Hazle mode</option>
+        <option value="gradient">colour combo</option>
+    </select>
+   </section>
+    <!-- 7TH tip on text gradient -->
+   <section class="pro-tip__7">
+    <h1>SHANSOME IS A CUTIE</h1>
+   </section>
+   <!-- 8th tip on checked and focus pseudo classes -->
+   <section class="pro-tip__8">
+    <label for="email">Email address</label></br>
+    <input id="email" type="email" name="Email" placeholder="kindly enter your email address" required /></br>
+    <input id="hobby" type="checkbox" name="hobby" value="tech"/>Tech</br>
+ <input id="hobby" type="checkbox" name="hobby" value="Football"/>Football</br>
+ <nav>
+    <a href="" class="dra">hh</a><a href="" class="dre">jhh</a><a href="" class="dre">jjjkkk</a><a href="" class="dre">awq</a><a href="" class="dre">ooooo</a>
+ </nav>
+   </section>
+   <!-- 9th tip on scrolling -->
+    <section id="pro-tip__9">
+   <section class="container-holder">
+        <div class="container">
+            <h2>THIS IS AN HEADER</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id harum nesciunt aspernatur animi fuga odit maiores voluptas itaque ratione magnam nostrum quo, laborum sunt, eos praesentium ea illo facilis consequuntur quam atque mollitia corrupti quod veritatis. Saepe nostrum impedit magni!</p>
+            <footer>This is a nice footer</footer>
+        </div>
+        <div class="container">
+            <h2>THIS IS AN HEADER</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id harum nesciunt aspernatur animi fuga odit maiores voluptas itaque ratione magnam nostrum quo, laborum sunt, eos praesentium ea illo facilis consequuntur quam atque mollitia corrupti quod veritatis. Saepe nostrum impedit magni!</p>
+            <footer>THIS IS AN HEADER</footer>
+        </div>
+        <div class="container">
+            <h2>THIS IS AN HEADER</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id harum nesciunt aspernatur animi fuga odit maiores voluptas itaque ratione magnam nostrum quo, laborum sunt, eos praesentium ea illo facilis consequuntur quam atque mollitia corrupti quod veritatis. Saepe nostrum impedit magni!</p>
+            <footer>This is a nice footer</footer>
+        </div>
+   </section>
+</section>
+<!-- 10th tip on animation -->
+   <section class="pro-tip__10">
+
+    <div class="animation">
+        End of tips
+</div>
+   </section>
+</body>
+</html>

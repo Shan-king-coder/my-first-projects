@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: #ff3355;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        h1{
+           padding: 4vmax;
+            background-color: azure;
+            color: black;
+            width: 30vmax;
+            animation-name: running;
+            animation-duration: 30s;
+            animation-timing-function: ease;
+            animation-delay: 3s;
+            animation-iteration-count: 1;
+            font-size: 2vmax;
+            text-align: center;
+           
+
+        }
+        @keyframes running{
+            0%{
+opacity: 0.5;
+
+            }
+            10%{
+                scale: 1.4;
+                border-radius: 10%;
+                background-color: blueviolet;
+                /* transform: rotateX(10deg);
+                transform: rotateY(20deg);
+                transform: rotateZ(30deg); */
+                transform: rotate(360deg);
+                align-self: flex-start;
+                opacity: 0.6;
+                color: black;
+                text-decoration: dotted;
+                font-family: cursive;
+              
+                
+              
+            }
+            20%{
+                scale: 1.5;
+                border: 70%;
+                background-color: aliceblue;
+                transform: rotateX(150deg);
+                transform: rotateY(200deg);
+                transform: rotateZ(303deg);
+                opacity: 0.7;
+                /* position: relative;
+                left: 50%; */
+                color: bisque;
+                text-decoration: double;
+                font-family: "Bodoni Moda", serif;
+            }
+            30%{
+scale: 1.6;
+border-radius: 5%;
+background-color: bisque;
+/* transform: rotateX(10deg);
+                transform: rotateY(120deg);
+                transform: rotateZ(320deg); */
+                transform: rotate(180deg);
+                align-self: flex-end;
+                opacity: 0.8;
+                color: blue;
+                text-decoration: line-through;
+                font-family: "Cedarville Cursive", cursive;
+               
+            }
+            40%{
+                scale: 2.0;
+                border-radius: 90%;
+                background-color: burlywood;
+                transform: rotateX(105deg);
+                transform: rotateY(220deg);
+                transform: rotateZ(313deg);
+                opacity: 0.9;
+                align-self: flex-end;
+                color: yellow;
+                text-decoration: dashed;
+                font-family: "Dosis", sans-serif;
+            }
+            50%{
+               scale: 2.1; 
+               border-radius: 22%;
+               background-color: cadetblue;
+               transform: rotateX(11deg);
+                transform: rotateY(232deg);
+                transform: rotateZ(356deg);
+                /* position: relative;
+                right: 50%; */
+               color: hotpink;
+               text-decoration: none;
+               font-family: "Anton SC", sans-serif;
+            }
+            60%{
+            scale: 2.2;   
+            border-radius: 45%;
+            background: plum;
+            transform: rotateX(10deg);
+                transform: rotateY(20deg);
+                transform: rotateZ(30deg);
+                opacity: 1;
+                color: gold;
+                text-decoration: overline;
+                font-family: "Noto Sans KR", sans-serif;
+            }
+            70%{
+                scale: 2.3;
+                border-radius: 55%;
+                background-color: cornflowerblue;
+                transform: rotateX(230deg);
+                transform: rotateY(140deg);
+                transform: rotateZ(209deg);
+                flex-basis: 12vmax;
+                color: gold;
+                text-decoration: solid;
+                font-family: "Playwrite HU", cursive;
+              
+             
+            }
+            80%{
+                scale: 2.3;
+                border-radius: 12%;
+                background-color: aquamarine;
+                transform: rotateX(134deg);
+                transform: rotateY(369deg);
+                transform: rotateZ(59deg);
+                align-self: baseline;
+                color: goldenrod;
+                text-decoration: underline;
+                font-family: "Yuji Mai", serif;
+               
+            }
+            90%{
+                scale: 2.5;
+                border-radius: 76%;
+                background-color: #2cbadf;
+                /* transform: rotateX(360deg);
+                transform: rotateY(34deg);
+                transform: rotateZ(12deg); */
+                transform: rotate(360deg);
+                align-self: flex-start;
+                color: lightcoral;
+                text-decoration: wavy;
+                font-family: "Playwrite HR Lijeva", cursive;
+                
+            }
+            100%{
+                scale: 3; 
+                background-color: yellow;
+                border-radius: 50%;
+                /* transform: rotateX(123deg);
+                transform: rotateY(246deg);
+                transform: rotateZ(312deg); */
+                transform: rotate(270);
+                opacity: 0.8;
+                color: lightslategrey;
+                text-decoration: aqua;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+        }
+        @media (max-width: 320px) {
+           h1{
+            font-size: 1.9vmax;
+            width: 28vmax;
+           } 
+        }
+        @media (max-width: 290px) {
+           h1{
+            font-size: 1.8vmax;
+            width: 25vmax;
+           } 
+        }
+        @media (max-width: 250px) {
+           h1{
+            font-size: 1.4vmax;
+            width: 20vmax;
+           } 
+        }
+        @media (max-width: 200px) {
+           h1{
+            font-size: 1vmax;
+            width: 15vmax;
+           } 
+        }
+        @media (max-width: 150px) {
+           h1{
+            font-size: 0.7vmax;
+            width: 11vmax;
+           } 
+        }
+    </style>
+</head>
+<body>
+   <h1>THIS IS A NICE BIG BOX</h1>
+   <!-- <h1>THIS IS A NICE BIG BOX</h1>
+   <h1>THIS IS A NICE BIG BOX</h1>
+   <h1>THIS IS A NICE BIG BOX</h1>
+   <h1>THIS IS A NICE BIG BOX</h1>
+   <h1>THIS IS A NICE BIG BOX</h1>
+   <h1>THIS IS A NICE BIG BOX</h1>
+   <h1>THIS IS A NICE BIG BOX</h1> -->
+  
+</body>
+</html>

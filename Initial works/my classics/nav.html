@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nav</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+            background: radial-gradient( circle at top left,#a8cb65,#3e8e41,#87ceeb,#4f0640);
+            
+        }
+        header{
+            display: flex;
+            background-color: burlywood;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.2rem;
+        width: 100%;
+    overflow: auto;}
+            
+            ul{
+                display: flex;
+                gap: 2.6rem;
+                list-style: none;
+                font-size: 1.6rem;
+                
+            }
+            h1{
+                font-size: 3rem;
+            }
+            #first-a{
+                color: #480448;
+                text-decoration: none;
+                background-color: pink;
+                padding: 1.2rem;
+                border-radius: 75%;
+                
+            }
+            #first-a:hover{
+                background-color: aqua;
+                color: orangered;
+            }
+            aside{
+                
+                background: linear-gradient(to bottom left,dodgerblue,#74db97,rgb(148, 148, 89),burlywood,black);
+                padding: 12rem 12rem;
+                font-size: 3rem;
+                color: white;
+                width: 100%;
+            }
+            .box1{
+                background-color: burlywood;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 32rem;
+                border-radius: 7%;
+                padding: 2rem;
+                font-size: 2rem;
+                box-shadow: 0 2px 40px white;
+
+            }
+            .box2{
+                background-color: burlywood;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+                width: 32rem;
+                border-radius: 7%;
+                padding: 2rem;
+                font-size: 2rem;
+                box-shadow: 0 2px 40px white;
+            }
+            .box-container{
+                justify-content: center;
+                display: flex;
+                margin-top: 15rem;
+                gap: 8rem;
+                margin-bottom: 10rem;
+
+            }
+            .first-faq{
+                border-radius: 7px;
+                width: 40%;
+                background-color: rgb(185, 183, 183);
+                padding: 1.1rem 0.8rem;
+            }
+            section{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5rem;
+                margin: 5rem;
+            }
+            footer{
+                display: flex;
+            background-color: plum;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.2rem;
+            flex-direction: row;
+            width: 100%;
+            overflow: auto;
+            }
+            #second-a{
+                color: #eae245;
+                text-decoration: none;
+                background-color: rgb(14, 3, 5);
+                padding: 1.2rem;
+                border-radius: 75%;
+                
+            }
+            #second-a:hover{
+                background-color: rgb(39, 29, 222);
+                color: rgb(223, 230, 236);
+            }
+
+        
+    </style>
+</head>
+<body>
+   <header>
+    <h1> shansome </h1>
+    <nav>
+        <ul>
+            <li id="navlinks"><a href="#" id="first-a">homepage</a></li>
+            <li id="navlinks"><a href="#" id="first-a">customers</a> </li>
+            <li id="navlinks"><a href="#" id="first-a">contacts</a> </li>
+            <li id="navlinks"><a href="#" id="first-a">services</a></li>
+        </ul>
+    </nav>
+   </header> 
+   <aside>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit iusto mollitia unde veniam dicta necessitatibus.
+   </aside>
+   <main>
+    <div class="box-container">
+    <div class="box1">
+        "
+        
+        <div class="box1-text" style="font-size: 1.3rem; text-align: center;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, earum. Nemo, adipisci expedita! Placeat, ullam!</div>
+        <div><img src="IMG_4990.WEBP" alt="Kevin Powell" style="border-radius: 50%; width: 11rem; padding: 1rem"  /></div>
+        <div>
+            <p style="font-size: 2.2rem; color: dodgerblue; font-family: Verdana, Geneva, Tahoma, sans-serif;">jessica chan</p>
+            <p style="font-size: 1rem; font-style: italic;">Web Developer &amp; YouTuber</p>
+        </div>
+
+    </div>
+    <div class="box2">
+        "
+        
+        <div class="box1-text" style="font-size: 1.3rem; text-align: center;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, earum. Nemo, adipisci expedita! Placeat, ullam!</div>
+        <div><img src="IMG_4990.WEBP" alt="Kevin Powell" style="border-radius: 50%; width: 11rem; padding: 1rem"  /></div>
+        <div>
+            <p style="font-size: 2.2rem; color: dodgerblue; font-family: Verdana, Geneva, Tahoma, sans-serif;">jessica chan</p>
+            <p style="font-size: 1rem; font-style: italic;">Web Developer &amp; YouTuber</p>
+        </div>
+
+    </div>
+    </div>
+    <section>
+        <div style="font-size: 3rem; color: white;">FAQs</div>
+        <div class="first-faq">
+            <p style="margin-bottom: 1rem; font-size: 1.5rem; color: blue;">Is it free?</p>
+            <hr style="border: dotted; border-top: 0.2rem solid purple; margin-bottom: 1rem;" />
+            <p style="font-size: 1.2rem;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro eaque libero exercitationem voluptas maxime ducimus vel facere fuga corrupti saepe?</p>
+        </div>
+        <div class="first-faq">
+            <p style="margin-bottom: 1rem; font-size: 1.5rem; color: blue;">Is it Engaged?</p>
+            <hr style="border: dotted; border-top: 0.2rem solid purple; margin-bottom: 1rem;" />
+            <p style="font-size: 1.2rem;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam laboriosam voluptatem distinctio earum? Quam placeat obcaecati, esse eaque, quibusdam ea nisi libero impedit excepturi labore tempora rerum. Quis odit voluptatem illo, ratione reiciendis voluptate. Quo repellendus tenetur ratione veritatis optio sapiente quas maiores eligendi, magnam dolore, perferendis cumque hic! Perspiciatis quasi laborum harum dolores officia in quos deleniti corporis ratione architecto. Dolorum architecto, tempora sequi mollitia quis quae, ipsum, optio sit qui natus saepe id. Unde odit asperiores et autem, quidem ullam voluptas, similique repellat dicta laborum nam blanditiis, consequuntur quas quibusdam iure ex architecto! Ab, voluptas iure. Iste, ipsam vitae error neque dolor quis voluptates. Ea quidem repellendus odio corporis quae vel dolor est quos consequuntur beatae! Ipsa, doloribus. Quaerat voluptates rem quibusdam beatae, minus ad maiores, voluptatem sint nemo dolore, sapiente ducimus. Voluptatem aut amet harum, nobis molestiae modi velit recusandae nostrum officia provident iure facilis beatae natus nisi fugiat facere, nam voluptate, incidunt quasi eius. Quidem deserunt iste dolores obcaecati pariatur dignissimos aliquam quod eos fugit iure sequi laudantium exercitationem ipsam reiciendis atque nam commodi, totam cupiditate quae ratione assumenda odit. Deserunt, autem reiciendis cumque facere fuga, explicabo commodi sit iste molestiae repudiandae ullam nesciunt recusandae reprehenderit neque suscipit natus porro earum voluptate voluptatem. Esse laborum odit et. Quidem, suscipit asperiores animi non voluptate at reiciendis in architecto blanditiis nam repudiandae alias saepe esse excepturi omnis quia, unde delectus vel quis id! Eius officiis incidunt dolores. Repudiandae eveniet laudantium voluptate vitae similique consectetur illum sequi, aperiam quis asperiores provident quod pariatur numquam temporibus! Officia earum nulla tenetur est? Laboriosam non aliquid corporis blanditiis iste quo molestias odit error animi. Reprehenderit numquam voluptas, tempora perferendis accusantium ipsum, voluptate ipsam illum recusandae libero expedita hic illo deleniti harum optio, quod esse aut consequuntur nemo accusamus eaque. Necessitatibus laudantium soluta doloribus tenetur! Eveniet, nulla quisquam veniam et iure officiis tempore cum numquam. Quos recusandae officiis iusto inventore facere similique minima obcaecati dicta laboriosam a ratione et, repellat eum! Explicabo doloribus, nulla laborum nisi laboriosam eligendi, iste, iusto provident reprehenderit officia adipisci. Id aliquid impedit doloribus asperiores molestiae magni consectetur quo, ullam velit debitis incidunt autem laudantium dolores eius animi, labore enim eaque quod ipsa suscipit odit delectus voluptates, possimus sed! Nobis aut et sint at ipsam quisquam quod impedit consectetur veritatis debitis quos, deleniti facilis dolor eligendi inventore vitae expedita ab necessitatibus? Odit et incidunt excepturi repudiandae ab sit. Saepe.</p>
+        </div>
+        <div class="first-faq">
+            <p style="margin-bottom: 1rem; font-size: 1.5rem; color: blue;">Is it subsidized?</p>
+            <hr style="border: dotted; border-top: 0.2rem solid purple; margin-bottom: 1rem;" />
+            <p style="font-size: 1.2rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum cum minima inventore non facere consequatur quisquam quas repellendus ad obcaecati ipsum modi ullam saepe, eveniet dolore tempore ipsa doloremque vero. Quisquam doloribus fuga repudiandae inventore magni, sapiente, asperiores obcaecati, consectetur suscipit debitis incidunt saepe consequuntur optio et voluptatum? Excepturi nemo pariatur perferendis numquam minus praesentium quibusdam mollitia quidem necessitatibus, distinctio, commodi alias eveniet reiciendis fuga, ut unde eos assumenda aliquid sint voluptas animi! Minus dolorum labore error totam dicta mollitia quos tempore magnam cupiditate vero veritatis numquam vitae commodi dolores, non architecto nam voluptatibus maxime delectus. Eveniet atque qui ducimus numquam voluptatem fuga iste. Hic iste delectus quae similique repudiandae laudantium iure culpa sint ea, nulla dignissimos, consequatur suscipit vitae exercitationem incidunt. Expedita, sunt. Qui voluptate aliquam delectus, itaque praesentium nihil deserunt labore pariatur ipsum. Quaerat cupiditate ipsam repellat excepturi dicta eum at veritatis possimus, reprehenderit sit temporibus est esse mollitia quasi tempora ut sint tenetur veniam! Placeat, aspernatur autem ipsam porro iure incidunt amet nobis nihil odit. Illum saepe asperiores voluptate accusamus? Consequuntur quos ut quas, suscipit in illum voluptatem nobis exercitationem asperiores itaque necessitatibus facilis sint neque quis ratione eos dolores error dolore corporis atque iusto voluptates. Debitis tempore nobis quam vitae praesentium aut necessitatibus placeat, eligendi totam, ducimus esse suscipit facere architecto veritatis dolorum minima sapiente laboriosam! Voluptatem sit quis iusto unde voluptatum libero praesentium velit modi? Blanditiis, debitis nostrum. Pariatur maiores quia sed rem, culpa mollitia harum tempore voluptatum earum temporibus magnam nisi alias dolorum fugiat eveniet aperiam. Modi, aperiam quod adipisci quasi repellat ex sint?</p>
+        </div>
+        <div class="first-faq">
+            <p style="margin-bottom: 1rem; font-size: 1.5rem; color: blue;">Is it sponsored?</p>
+            <hr style="border: dotted; border-top: 0.2rem solid purple; margin-bottom: 1rem;" />
+            <p style="font-size: 1.2rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam magni ratione quas fugiat atque vitae odit eligendi voluptatibus aspernatur eius asperiores blanditiis, non nulla suscipit voluptatum accusamus rerum ut quaerat est aliquam iusto. A voluptatum quo exercitationem ipsum deleniti eius. Placeat nihil necessitatibus quis corporis pariatur rerum, praesentium voluptate doloribus magnam asperiores dicta reprehenderit similique quibusdam amet! Illo hic molestiae repellendus necessitatibus modi. Deserunt adipisci quas exercitationem possimus praesentium cumque doloribus, enim iusto repellat? Dicta quam illo, quisquam consequatur nobis officia praesentium minus corrupti itaque culpa! Perspiciatis fugiat libero voluptatibus natus laborum, sunt quae iure qui obcaecati sint in nesciunt error ipsa eos molestias sed exercitationem vero! Atque placeat neque nemo! Rem animi blanditiis ad illum eos. Veniam, architecto sapiente.</p>
+        </div>
+        <div class="first-faq">
+            <p style="margin-bottom: 1rem; font-size: 1.5rem; color: blue;">Is it monetizable?</p>
+            <hr style="border: dotted; border-top: 0.2rem solid purple; margin-bottom: 1rem;" />
+            <p style="font-size: 1.2rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores culpa consequuntur aliquam, sit, debitis, delectus quia ratione numquam quas cum ipsam dolorem ut eos qui aspernatur tempore impedit nulla blanditiis reprehenderit voluptatem id deserunt? Magni, quaerat vel. Culpa voluptatum voluptates facere ratione, excepturi iure, accusantium, veritatis in molestias officia incidunt!</p>
+        </div>
+    </section>
+    </main>
+    <footer>
+        
+        <h1 style="color: white;"> shansome </h1>
+    <nav>
+        <ul>
+            <li id="navlinks"><a href="#first-a" id="second-a">homepage</a></li>
+            <li id="navlinks"><a href="#" id="second-a">customers</a> </li>
+            <li id="navlinks"><a href="#" id="second-a">contacts</a> </li>
+            <li id="navlinks"><a href="#" id="second-a">services</a></li>
+        </ul>
+    </nav>
+    </footer>
+    <footer style="background-color: white; display: flex; justify-content: center; align-items: center;">
+        <p>&copy; 2023 Tech Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        *, *::before, *::after{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;    
+        }
+        body{
+            display: flex;
+            justify-content: center; 
+            align-items: center;
+            height: 100vh;
+            
+        }
+        section{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr ;
+            background-color: whitesmoke;
+            padding: 1.5rem;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+            gap: 2rem;
+            /* margin: 6rem; */
+            width:80%;
+            overflow: auto;
+        }
+        h1{
+            font-weight: bolder;
+            margin-bottom: 0.5rem;
+        }
+        h2{
+            font-size: 2.3rem;
+          
+        }
+        a{
+            text-decoration: none;
+            font-size: 0.8rem;
+            color: aliceblue;
+            background: green;
+            padding: 0.5rem;
+            border-radius: 1rem;
+
+        }
+        a:hover{
+            background: blue;
+            color: burlywood;
+            border-radius: 3rem;
+        }
+        .special-section{
+            margin-bottom: 1rem;
+            
+        }
+        @media (max-width: 480px) {
+       html {
+           font-size: 32.5%;
+       }
+       /* section{
+        height: 50%;
+       } */
+      
+   }
+  </style>
+</head>
+<body>
+    <section>
+        <div>
+           <h1>FOOD & BEVERAGES</h1>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident perferendis reiciendis laborum minima minus, aspernatur aliquam voluptatibus eaque. Fugit iste laborum, ratione blanditiis dolore natus ut consequatur asperiores ipsam porro.</div>
+        </div>
+        <div>
+           <h1>HOME IMPROVEMENTS</h1>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident perferendis reiciendis laborum minima minus, aspernatur aliquam voluptatibus eaque. Fugit iste laborum, ratione blanditiis dolore natus ut consequatur asperiores ipsam porro.</div>
+        </div>
+        <h2>INDUSTRIES</br> WE SERVICE</h2>    
+        </div>
+        <div>
+            <h1>PHARMACETICALS</h1>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident perferendis reiciendis laborum minima minus, aspernatur aliquam voluptatibus eaque. Fugit iste laborum, ratione blanditiis dolore natus ut consequatur asperiores ipsam porro.</div>
+        </div>
+        <div>
+            <h1>INTERNET RETAILERS</h1>
+            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident perferendis reiciendis laborum minima minus, aspernatur aliquam voluptatibus eaque. Fugit iste laborum, ratione blanditiis dolore natus ut consequatur asperiores ipsam porro.</div>
+        </div>
+        <div>
+          
+            <div  class="special-section">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident perferendis reiciendis laborum minima minus, aspernatur aliquam voluptatibus eaque. Fugit iste laborum, ratione blanditiis dolore natus ut consequatur asperiores ipsam porro.</div>
+            <div><a href="grid.html">view more</a></div>
+        </div>
+    </section>
+</body>
+</html>

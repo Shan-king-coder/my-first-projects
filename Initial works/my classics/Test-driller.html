@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test-driller</title>
+    <style>
+        *,*::after,*::before{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 1vmax;
+        }
+        header{
+            display: grid;
+            grid-template-rows: 0.8fr 1.5fr 0.5fr 0.75fr;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+         .header-section-1{
+            display: flex;
+            gap: 1.8rem;
+            align-items: center;
+            font-size: 1.5rem;
+            background-color: #3c773c;
+            flex-wrap: wrap;
+         }
+         .header-section-1 a{
+            color: ghostwhite;
+            text-decoration: none;
+            transition: all 300ms ease-out;
+         }
+         .header-section-1 a:hover{
+          /* filter: brightness(300%) contrast(100%); */
+          background-color: #8fc88f;
+          padding: 0 0.3rem 0 0.3rem;
+          border-radius: 4px;
+          opacity: 0.8;
+         }
+         section[class="header-section-2"]{
+            background-color: rgb(9, 147, 9);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          padding: 0.8rem;
+         }
+         div[class="2nd-header__first"]{
+            display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 23px;
+      color: ghostwhite;
+         }
+         div[class="2nd-header__second"] button{
+            background-color: rgb(255, 65, 65);
+            border-radius: 30px;
+            border: 1px solid white;
+            padding: 10px 15px;
+            color: aliceblue;
+         }
+         div[class="2nd-header__third"]{
+            background-color: black;
+            height: 10vh;
+            width: 28%;
+            /* clip-path: circle(30% at 20px 30px); */
+            clip-path: polygon(5% 20%, 24% 11%, 100% 11%, 99% 88%, 24% 89%, 8% 81%, 0 53%);
+         }
+         section[ class="header-section-3"]{
+            border-bottom: 1px solid green;
+            background-color: rgb(228, 228, 229);
+         }
+         button[class="3rd-header__buttons"]{
+            padding:  7px 3pc;
+        border-radius: 0;
+        border: none;
+        display: inline;
+        font-size: 1.5rem;
+       }
+       section[ class="header-section-4"]{
+        width: 60%;
+        justify-self: center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 5px solid green;
+        background-color: rgb(236, 236, 242);
+        flex-wrap: wrap;
+       }
+       section[ class="header-section-4"] a{
+        text-decoration: none;
+        color: rgb(83, 83, 83);
+        font-size: 2rem;
+        padding: 0 0.5rem;
+       }
+       main{
+        display: flex;
+        justify-content: center;
+       }
+       section[class="main-container"]{
+        width: 60%;
+        /* background-color: purple; */
+       }
+       section[class="time-section"]{
+        background-color: green;
+        /* clamp(min-value, preferred value, max-value) */
+        font-size: clamp(0.7pc, 1.6rem, 1.6pc);
+        /* font-size: 1.2pc; */
+        opacity: 0.6;
+        width: 60%;
+        margin-top: 2.3rem;
+       }
+       section[class="answering-section"]{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+       margin: 30px 0;
+       }
+       div[class="question"], section[ class="question-part"]{
+        font-size: 20px;
+       }
+       select{
+        font-size: 1.65rem;
+        /* width: 50rem; */
+        width: 80%;
+        letter-spacing: 0.2rem;
+        z-index: 1;
+       }
+       option{
+      margin-top: 2rem;
+        color: red;
+        background-color: burlywood;
+        letter-spacing: 0.2rem;
+        z-index: 1;
+       }
+       section[class="explanation-section"]{
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        font-size: 1.8rem;
+        margin-top: 9rem;
+        margin-bottom: 2rem;
+       }
+       details{
+        font-size: 1.8rem;
+       }
+       #toggle{
+        margin-right: 2pc;
+      padding: 15px 5pc 15px 15px;
+      border-radius: 1pc;
+      border: 1px solid gray;
+       }
+       table{
+        width: 100%;
+        font-size: 1.5rem;
+        margin-bottom: 5rem;
+       }
+       td{
+        text-align: center;
+        padding:10px 5px;
+       }
+       td:hover{
+        color: red;
+        background-color: skyblue;
+        cursor: pointer;
+       }
+       div[ class="attempted"]{
+        font-size: 1.45rem;
+        padding: 1rem;
+        background-color: gray;
+        color: white;
+        width: max-content;
+        opacity: 0.6;
+       }
+       .absolute{
+        position: absolute;
+        top: 0;
+        z-index: 20;
+        font-size: 44rem;
+        display: none;
+        transition: all 3s ease;
+        transform: translateY(-6.5pc) translateX(10pc);
+     
+       }
+       img{
+        width: 50px;
+       }
+       body:has(option[value="nee"]:checked) header{
+        filter: blur(5pc) grayscale(180%) brightness(500%) contrast(400%);
+       }
+       body:has(option[value="nee"]:checked) main{
+        filter: blur(5pc) grayscale(200%) brightness(500%) contrast(400%);
+       }
+       body:has(option[value="nee"]:checked) .absolute{
+       display: inline;
+       }
+       @media (max-width: 570px) {
+        #toggle{
+        margin-right: 1.3pc;
+      padding: 10px 3pc 10px 10px;
+       }
+       }
+       @media (max-width: 470px) {
+        div[class="2nd-header__first"]{
+      
+    
+      font-size: 17.3px;
+   
+         }
+         div[class="2nd-header__second"] button{
+            padding: 5px 7.5px;
+            font-size: 10px;
+        
+         }
+         div[class="question"], section[ class="question-part"]{
+        font-size: 18.5px;
+       }
+       /* select{
+        width: 40rem;
+       } */
+       #toggle{
+        margin-right: 1pc;
+      padding: 8px 2pc 8px 8px;
+       }
+       }
+       @media (max-width: 360px) {
+        table{
+        font-size: 1.2rem;
+       }
+       td{
+        padding:8px 3px;
+       }
+    
+       }
+       @media (max-width: 330px) {
+        .header-section-1{
+            gap: 1.1rem;
+        
+        }
+        div[class="2nd-header__first"]{
+      font-size: 13px;
+   
+         }
+        button[class="3rd-header__buttons"]{
+            padding:  4px 1pc;}
+
+            img{
+        width: 35px;
+       }
+       div[class="question"], section[ class="question-part"]{
+        font-size: 16.5px;
+       }
+       /* select{
+        width: 30rem;
+       } */
+       #toggle{
+        margin-right: 0.8pc;
+      padding: 6px 0.95pc 6px 6px;
+       }
+       }
+       @media (max-width: 290px) {
+        div[class="2nd-header__first"]{
+      font-size: 9px;
+   
+         }
+         div[class="2nd-header__second"] button{
+            padding: 3px 5.5px;
+            font-size: 7.5px;
+        
+         }
+        button[class="3rd-header__buttons"]{
+            padding:  2.5px 0.6pc;}
+
+            img{
+        width: 25px;
+       }
+       section[ class="header-section-4"] a{
+        font-size: 1.22rem;
+       }
+       /* select{
+        width: 20rem;
+       } */
+       #toggle{
+        margin-right: 0.53pc;
+      padding: 2.5px 0.7pc 2.5px 2.5px;
+       }
+       }
+       @media (max-width: 256px) {
+        td{
+        padding:6px 1.5px;
+       }
+       }
+       @media (max-width: 210px) {
+        td{
+        padding:4px 0.75px;
+       }
+       }
+
+    </style>
+</head>
+<body>
+    <header>
+        <section class="header-section-1">
+            <a href="" class="1st-header__links">👻 Logout</a>
+            <a href="" class="1st-header__links">📑 Bookmark</a>
+            <a href="" class="1st-header__links">🧮 Calculator</a>
+            <a href="" class="1st-header__links">🚼 Report error</a>
+            <a href="" class="1st-header__links">🎲 Dictionary</a>
+            <a href="" class="1st-header__links">AI Tutor</a>
+        </section>
+        <section class="header-section-2">
+            <div class="2nd-header__first">
+                <img src="trophy.jpg" alt="My victory image" title="victory">
+                <span>OluwaniSola</span>
+            </div>
+            <div class="2nd-header__second">
+                <button> ✅ Submit</button>
+            </div>
+            <div class="2nd-header__third"></div>
+        </section>
+        <section class="header-section-3">
+            <button class="3rd-header__buttons">Results</button>
+            <button class="3rd-header__buttons">Correction</button>
+        </section>
+        <section class="header-section-4">
+            <a href="" class="fourth-header__links">English</a>
+            <a href="" class="fourth-header__links">Biology</a>
+            <a href="" class="fourth-header__links">Chemistry</a>
+            <a href="" class="fourth-header__links">Physics</a>
+        </section>
+    </header>
+  <main>
+    <section class="main-container">
+    <section class="time-section">
+       <strong> Score:</strong> 0/1 <strong>Time:</strong> 13 secs <strong>Remark: </strong>Unattempted
+    </section>
+    <section class="answering-section">
+        <div class="question">⬇ Question 1/60 ➿</div>
+        <section class="question-part">
+            This question is based on life-changer novel <br>
+            Why did Ummi think her story will not be suitable to tell her children???.
+        </section>
+        <select name="answer" class="pink-an-answer">
+            <option value="see">She had an horrible experience growing up</options>
+            <option value="pee">She had regrets that she won't want her children to know about</options>
+            <option value="zee">She lived a complex life</option>
+            <option value="nee">Her life before marriage had always been one dreary thing from the other</option>
+            </select>
+    </section>
+    <section class="explanation-section">
+        <div class="explanation">
+            ⬇ Explanation ➿
+        </div>
+        <!-- <section class="main-explanation">
+            Ummi thinks this because frankly Sola has always been handsome. 
+            Refer to the novel this is the accurate answer 
+        </section> -->
+        <details>
+            <summary style="font-size: 2rem; cursor: pointer; padding-left: 1rem; margin-bottom: 1rem;">Click to view explanation</summary>
+            Ummi thinks this because frankly Sola has always been handsome. 
+            Refer to the novel this is the accurate answer 
+        </details>
+        <div class="buttons-house">
+            <button class="previous" id="toggle" style="background-color: rgb(238, 54, 54); color: white; font-size: 1.5rem;">Previous</button>
+            <button class="Next" id="toggle" style="background-color: #14dd14; color: white; font-size: 1.5rem;">Next</button>
+        </div>
+    </section>
+    <section class="table-model">
+        <div class="attempted">Attempted Questions 1/60</div>
+        <table border="1">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td style="background-color: orangered; color: skyblue;">24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>32</td>
+                <td>33</td>
+                <td>34</td>
+                <td>35</td>
+                <td>36</td>
+                <td>37</td>
+                <td>38</td>
+                <td>39</td>
+                <td>40</td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>42</td>
+                <td>43</td>
+                <td>44</td>
+                <td>45</td>
+                <td>46</td>
+                <td>47</td>
+                <td>48</td>
+                <td>49</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>51</td>
+                <td>52</td>
+                <td>53</td>
+                <td>54</td>
+                <td>55</td>
+                <td>56</td>
+                <td>57</td>
+                <td>58</td>
+                <td>59</td>
+                <td>60</td>
+            </tr>
+        </table>
+    </section>
+</section>
+  </main>
+  <section class="absolute">
+         ❌
+  </section>
+</body>
+</html>

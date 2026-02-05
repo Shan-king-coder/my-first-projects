@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Home icon</title>
+<style>
+    *,*::after,*::before{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    html{
+        font-size: 62.5%;
+        font-family: cursive;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: rgb(63, 59, 59);
+    }
+    .container{
+        width: 45%;
+        background-color: white;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        overflow: hidden;
+        background: linear-gradient(to top right,burlywood,yellow,orange);
+    }
+    ul{
+        list-style: none;
+    }
+    header{
+        padding: 1.6rem;
+       background: burlywood;
+       
+    }
+    main{
+        padding: 0 1.6rem;
+        font-size: 1.2rem;
+    }
+    footer{
+        padding-top: 0;
+        padding-bottom: 1.6rem;
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+    }
+    ul{
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+    .first-link{
+        color: white;
+        background-color: green;
+        padding: 5px;
+        text-decoration: none;
+        border-radius: 1rem;
+    }
+    .second-link{
+        color: white;
+        background-color: rgb(170, 17, 17);
+        padding: 5px;
+        text-decoration: none;
+        border-radius: 1rem;
+    }
+     .second-link:hover{
+        color: aquamarine;
+        background-color: black;
+        border-radius: 3rem;
+    }
+    .first-link:hover{
+        color: aquamarine;
+        background-color: black;
+        border-radius: 3rem;
+    }
+  
+</style>
+</head>
+<body>
+    <section class="container">
+        <header class="container-header">
+            <div>1st March 3098</div>
+            <h1>Javascript Html</h1>
+        </header>
+        <main class="container-main">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, odio alias? Doloribus necessitatibus quo asperiores nisi quae molestiae minima sapiente voluptas itaque minus alias, facere eius ut velit accusantium numquam? Quo officiis consectetur minus nobis dicta possimus reprehenderit unde nesciunt consequatur? Commodi, vel! Similique odit, ad molestiae minus dolorem dolores.
+        </main>
+        <footer>
+            <hr style="border: 1px solid dodgerblue; margin-bottom: 2rem;"/>
+            <ul>
+                <li><a href="#" class="first-link">Read more</a></li>
+                <li><a href="#"  class="second-link">Cancel</a></li>
+            </ul>
+        </footer>
+    </section>
+    </section>
+</body>
+</html>

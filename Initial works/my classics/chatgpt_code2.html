@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gravity Draws Me Down - Poem Experience</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background: radial-gradient(circle at center, #000000, #0c0c0c, #1a1a1a);
+      overflow: hidden;
+      font-family: 'Poiret One', cursive;
+      color: gold;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 40px;
+      background: rgba(255, 215, 0, 0.05);
+      border: 2px solid gold;
+      border-radius: 25px;
+      box-shadow: 0 0 20px gold;
+      text-align: center;
+      animation: glowBox 3s ease-in-out infinite alternate;
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin-bottom: 30px;
+      background: linear-gradient(45deg, gold, #ffcc00, #fff700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shine 4s linear infinite;
+    }
+
+    p {
+      font-size: 1.3em;
+      line-height: 1.8;
+      margin: 25px 0;
+      animation: floatUp 5s ease-in-out infinite alternate;
+      transition: all 0.3s ease;
+    }
+
+    p:hover {
+      transform: scale(1.05);
+      text-shadow: 0 0 12px #ffd700, 0 0 30px gold;
+    }
+
+    @keyframes glowBox {
+      from { box-shadow: 0 0 10px gold; }
+      to { box-shadow: 0 0 30px #ffea00; }
+    }
+
+    @keyframes shine {
+      0% { background-position: 0%; }
+      100% { background-position: 100%; }
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-10px); }
+    }
+
+    /* Fireworks background */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="fireworks"></canvas>
+
+  <div class="container">
+    <h1>"Gravity Draws Me Down"</h1>
+    <p>Gravity draws me down, ooh ooh, oohooh ooh,<br>
+    Feet on the pavement, dreams overdue.<br>
+    Skyscrapers weep in electric rain,<br>
+    Everyone running from something they can't name.</p>
+
+    <p>That girl on the corner hums to survive,<br>
+    Sings to the night just to feel alive.<br>
+    I pass her by, she fades from view,<br>
+    But in her song, I hear me too.</p>
+
+    <p>A man in a suit with bloodshot eyes,<br>
+    Holds a bouquet like a thin disguise.<br>
+    Is it for love, or is it goodbye?<br>
+    I’ll never know, just walk on by.</p>
+
+    <p>Sonder hits like a midnight train,<br>
+    Every face holds joy and pain.<br>
+    I’m just a line in a bigger script,<br>
+    A background blur in someone’s trip.</p>
+
+    <p>A child laughs on a broken swing,<br>
+    While a mother hides her wedding ring.<br>
+    Stories crash like waves in the street,<br>
+    Each heartbeat drumming its own beat.</p>
+
+    <p>Gravity draws me down — not just to ground,<br>
+    But into the lives that spin around.<br>
+    A million souls with burning skies,<br>
+    Carrying truths behind their eyes.</p>
+
+    <p>And though I’m small, I start to see,<br>
+    They don’t know me — and that sets me free.<br>
+    In their chaos, I find my place,<br>
+    A shadow dancing in shared space.</p>
+
+    <p>So sing it soft, or shout it loud,<br>
+    We're all just faces in the crowd.<br>
+    But every one a world profound —<br>
+    And that’s what draws me down.</p>
+  </div>
+
+  <!-- Fireworks JavaScript -->
+  <script>
+    const canvas = document.getElementById('fireworks');
+    const ctx = canvas.getContext('2d');
+
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+
+    const particles = [];
+
+    function createParticle() {
+      const angle = Math.random() * 2 * Math.PI;
+      const radius = Math.random() * 3 + 2;
+      const speed = Math.random() * 6 + 2;
+      const color = `hsl(${Math.random() * 360}, 100%, 60%)`;
+      particles.push({
+        x: w / 2,
+        y: h / 2,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        radius,
+        color,
+        life: 100
+      });
+    }
+
+    function draw() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+      ctx.fillRect(0, 0, w, h);
+
+      particles.forEach((p, i) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.life--;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, 2 * Math.PI);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+
+        if (p.life <= 0) {
+          particles.splice(i, 1);
+        }
+      });
+
+      requestAnimationFrame(draw);
+    }
+
+    setInterval(() => {
+      for (let i = 0; i < 20; i++) {
+        createParticle();
+      }
+    }, 400);
+
+    draw();
+
+    window.addEventListener('resize', () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>

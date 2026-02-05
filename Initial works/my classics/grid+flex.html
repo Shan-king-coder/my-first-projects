@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 10</title>
+    <style>
+         *, *::before, *::after{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 62.5%;
+        }
+        body{
+          display: flex;
+          width: 100vw;
+          height: 100vh;
+          justify-content: center;
+          align-items: center;
+           }
+           section{
+            background-color: whitesmoke;
+            padding: 5rem 3rem; 
+            display: flex;
+            gap: 3rem;
+            width: 80%;
+
+         
+           }
+           .grid-container{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+           row-gap: 2rem;
+           column-gap: 3rem;
+           }
+           h1{
+            margin-bottom: 0.84rem;
+           }
+           .flex-container{
+            display: flex;
+            flex-direction: column;
+          gap: 0.5rem;
+         
+            
+           }
+           h2{
+            font-size: 3.7rem;
+           }
+           a{
+            text-decoration: none;
+            font-size: 1.3rem;
+            color: aliceblue;
+            background: green;
+            padding: 0.7rem;
+            border-radius: 1.2rem;
+            width: max-content;
+
+        }
+        a:hover{
+            background: blue;
+            color: burlywood;
+            border-radius: 3rem;
+        }
+        @media (max-width: 768px) {
+          html{
+            font-size: 52.5%;
+          }
+          section{
+            gap: 2rem;
+            padding: 5rem 2rem;
+
+          }
+          .grid-container{
+            column-gap: 2rem;
+          }
+         }
+         @media (max-width: 520px) {
+          html{
+            font-size: 42.5%;
+          }
+          section{
+         
+            gap: 1.8rem;
+            padding: 5rem 1.8rem;
+          }
+         .grid-container{
+            column-gap: 1.8rem;
+         }
+        }
+         @media (max-width: 480px) {
+          html{
+            font-size: 32.5%;
+          }
+          section{
+         
+            gap: 1.5rem;
+            padding: 5rem 1.5rem;
+          }
+         .grid-container{
+            column-gap: 1.5rem;
+         }
+        
+        
+         }
+         @media (max-width: 414px) {
+          html{
+            font-size: 19%;
+          }
+          section{
+         width: 87%;
+            gap: 1rem;
+            padding: 5rem 1rem;
+          }
+         .grid-container{
+            column-gap: 1rem;
+         }
+        
+        
+         }
+         /* @media (max-width: 370px) {
+          html{
+            font-size: 17%;
+          }
+          section{
+         
+            gap: 1rem;
+            padding: 5rem 1rem;
+          }
+         .grid-container{
+            column-gap: 1rem;
+         }
+        
+        
+         } */
+        
+    </style>
+   </head>
+<body>
+    <section>
+      <div class="grid-container">
+        <div class=" grid grid-1">
+            <h1>FOOD & BEVERAGES</h1>
+            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ad voluptates eveniet voluptate! Consequatur, vel?</P>
+        </div>
+        <div class=" grid grid-2">
+            <h1>HOME IMPROVEMENTS</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia nisi inventore neque natus, dolorem ex.</p>
+        </div>
+        <div class=" grid grid-3">
+            <h1>PHARMACETICALS</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque aliquid, voluptas inventore maiores soluta laudantium.</p>
+        </div>
+        <div class=" grid grid-4">
+            <h1>INTERNET RETAILERS</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum ipsum beatae eaque perferendis laudantium optio.</p>
+        </div>
+      </div>
+      <div class="flex-container">
+        <h2 class=" flex flex-1">Industries</br> We service</h2>
+        <div class=" flex flex-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti tempora unde modi accusamus eum laudantium sapiente iure cupiditate eius corporis odit fuga, commodi labore rem?</div>
+        <a href="#" class="flex flex-3">view more</a>
+      
+      </div>
+    </section>
+</body>
+</html>

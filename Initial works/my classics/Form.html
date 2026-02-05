@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Customers name</title>
+ <style>
+  body{
+    background-color: burlywood;
+    color: brown;
+  }
+ </style>
+</head>
+<body style="font-size: 24px; text-align: center">
+ <h1>Heaven Registation Form</h1>
+ <p> Kindly fill out this registration form</p>
+<form>
+<label for="firstname" >First name</label><br/>
+<input id="firstname" type="text" name="firstname" placeholder="kindly enter your fistname" required/><br/>
+  <label for="email">Email address</label></br>
+ <input id="email" type="email" name="Email" placeholder="kindly enter your email address" required /><br/>
+ <p><label for="nationality"> Nationality</label>
+ <select id="nationality" name="Nationality" style="height: 5vh">
+  <option>Nigeria</option>
+  <option>Ghana</option>
+  <option>France</option>
+  <option>USA</option>
+  <option>China</option>
+  <option>South Africa</option>
+  <option>Mauritius</option>
+  <option>India</option>
+ </select></p>
+ <p style="text-align: left"><label for="Gender" >Gender</label></br>
+ <input id="Gender" type="radio" name="Gender" value="male"/>Male</br>
+ <input id="Gender" type="radio" name="Gender" value="female"/>Female</br>
+ <input id="Gender" type="radio" name="Gender" value="Non-binary"/>Non-binary</br>
+ <input id="Gender" type="radio" name="Gender" value="Others"/>Others</br>
+ <input id="Gender" type="radio" name="Gender" value="rather not say"/>Rather not say </p>
+  <p style="text-align: left"><label for="hobby" >Hobbies</label></br>
+ <input id="hobby" type="checkbox" name="hobby" value="tech"/>Tech</br>
+ <input id="hobby" type="checkbox" name="hobby" value="Football"/>Football</br>
+ <input id="hobby" type="checkbox" name="hobby" value="Cooking"/>Cooking</br>
+ <input id="hobby" type="checkbox" name="hobby" value="Singing"/>Singing</br>
+ <input id="hobby" type="checkbox" name="hobby" value="Reading"/>Reading</br></p>
+ <label for="password">Password</label></br>
+ <input id="password" name="password" type="password" value="@76$)(:,&" required/></br>
+  <label for="confirmpassword">Confirm Password</label></br>
+ <input id="confirmpassword" name="password" type="password" value="@76$)(:,&" required/></br>
+ <label for="img">Upload Image</label></br>
+<input id="img" name="img" type="file" required value="in"/></br>
+ <button type="submit">Submit</button>
+</form>
+</body>
+</html>

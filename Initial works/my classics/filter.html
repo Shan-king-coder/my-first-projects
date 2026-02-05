@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css filters</title>
+    <style>
+        body{
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+        }
+        p
+        {
+            position: relative;
+           background-color: pink;
+           display: inline-block;
+           filter: blur(5px) grayscale(0) opacity(70%) brightness(100%);
+           transition: all 4s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+           padding: 20px;
+           text-shadow: 3px 4px 8px white;
+         
+         
+        }
+        p:hover{
+            filter: blur(0) grayscale(100%) opacity(100%);
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+            padding: 40px;
+            scale: 2;
+            text-shadow: 10px 10px 10px white,  10px 10px 10px white, 10px 10px 10px white, -10px -10px 10px white,  -10px -10px 10px white,  -10px -10px 10px white,  -10px -10px 10px white;
+          font-variant: small-caps;
+         
+
+         
+           
+         
+            /* scale: 2; */
+        }
+   
+
+    </style>
+</head>
+<body>
+  <p >He dies my people</p>
+</body>
+</html>

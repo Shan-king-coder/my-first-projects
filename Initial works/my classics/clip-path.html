@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip-Path</title>
+    <style>
+        body{
+       
+            margin: 0;
+        }
+          section{
+           
+            background-color: burlywood;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            background-color: black;
+            height: 45vh;
+            width: 28%;
+            /* clip-path: circle(30% at 20px 30px); */
+            clip-path: polygon(0 0%, 100% 0, 100% 100%, 0% 100%, 0 0, 0 0, 0 0, 0 0, 0 0);
+            /* so Shansome this note is for you some transistin can only work if they have the same rhythm
+            and pattern as how it is in the the original e.g.(div) and its transition(div:hover)
+            i have to have also nine values in both  the main and the hover for the transition to work  */
+
+
+
+            transition-property: all;
+            transition-duration: 3s;
+            transition-timing-function:ease;
+            
+
+        }
+        div:hover{
+            clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div></div>
+    </section>
+</body>
+</html>

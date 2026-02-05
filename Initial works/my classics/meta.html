@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.hover-element {
+  position: relative;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  width: 200px;
+}
+
+.hover-text {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+}
+
+.hover-element:hover .hover-text {
+  opacity: 1;
+  pointer-events: auto;
+}
+    </style>
+</head>
+<body>
+    <div class="hover-element">
+  <span class="hover-text">This text will appear on hover!</span>
+  <!-- Your element content here -->
+  Hover me!
+</div>
+
+
+</body>
+</html>

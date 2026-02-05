@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+    <style>
+        *,*::after,*::before{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        *::selection{
+     background-color: rgb(255, 0, 0);
+     color: burlywood;
+     padding: 2rem;
+     display: inline-block;
+       /* caret-color: red; */
+        }
+        html{
+            font-size: 1vmax; 
+            /* 10px */
+        }
+        body{
+          background-color: rgb(13, 13, 13);
+            color: #ffffffee;
+            transition: all 1s cubic-bezier(0,-0.61, 0, 1.09);
+               }
+        header{
+          background-color: rgb(19, 19, 19);
+            margin-bottom: 2rem;
+            transition: all 1s cubic-bezier(0,-0.61, 0, 1.09);
+            position: sticky;
+            top: 0px;
+            z-index: 1000;
+
+     
+        }
+        .header-1{
+            display: flex;
+            justify-content: space-around;
+            padding: 1.5rem 3.5rem;
+            /* flex-shrink: 1; */
+            align-items: center;  
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .nav-links{
+            font-size: 2vmax;
+            color: inherit;
+            text-decoration: none;
+            font-family: "Dosis", sans-serif;
+            white-space: nowrap;
+        }
+        #first-unordered__list{
+            display: flex;
+            gap: 2vmax;
+            align-items: center;
+          flex-wrap: wrap;
+        }
+        #first-ordered__list{
+            list-style: none;
+            display: flex;
+            font-size: 2vmax;
+            gap: 2vmax;
+            align-items: center;
+            flex-wrap: wrap;
+            /* cursor: pointer; */
+        }
+       button[class="first-button"]{
+      padding: 1rem 3rem;
+      border-radius: 6px;
+      background-color: #7171d2;
+      color: white;
+      border: none;
+      font-size: 1vmax;
+  word-break: normal;
+  transition: scale 1s ease-out;
+    
+       }
+       button[class="first-button"]:hover{
+        scale: 1.5;
+       }
+       body:has(option[value="lightmode"]:checked){
+        color: #2d2c2c;
+        background-color: #f5f5f5ee;
+        }
+        body:has(option[value="lightmode"]:checked) header{
+          background-color: #ffffffee;
+       filter: brightness(150%) grayscale(10%);
+       backface-visibility: hidden;
+
+        }
+        body:has(option[value="lightmode"]:checked) .Hello{
+          background-color: rgba(0, 0, 0, 0.668);
+          color: white;
+        }
+        body:has(option[value="lightmode"]:checked) footer{
+          background-color: white;
+        }
+      select{
+        border: none;   
+        background-color: inherit;
+        font-size: inherit;
+      }
+      option{
+        font-size: 1.5rem;
+        background-color: burlywood;
+        text-align: center;
+      }
+     span{
+        display: none;
+      }
+     li:has(select):hover span{
+        display: inline;
+        position: absolute;
+        font-size: 0.9vmax;
+        background-color: #ff2f2f;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        padding: 1rem;
+        border-radius: 18px;
+        right: 15rem;
+        top: 4.5rem;
+        color: white;
+     }
+      #sticky{
+        display: flex;
+        /* justify-content: space-evenly; */
+        padding: 1rem 4rem;
+        gap: 4rem;
+        overflow: auto;
+        overflow-x: scroll; 
+         scrollbar-width: none;
+      
+       
+        /* scroll-behavior: smooth; */
+        /* scroll-snap-type: x mandatory; */
+        /* stroke-dashoffset: 3rem; */
+      /* scrollbar-gutter: auto; */
+      
+      }
+      .sticky-links{
+        font-size: 1.5rem;
+        flex-shrink: 0;
+        cursor: pointer; 
+        position: sticky;
+      }
+      .sticky-links:hover{
+        color: green;
+        /* background-color: rgba(255, 255, 255, 0.9);
+        padding: 0.3rem 1rem; */
+      }
+      /* main{
+        display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      margin-top: 2rem;
+      } */
+       main{
+        display: flex;
+        justify-content: center;
+
+        /* background-color: bisque; */
+       }
+      /* section[id="content-1"]{
+        width: 800px;
+     
+      } */
+      section[class="main-content"]{
+       width: min(550px, 65%);
+      }
+      h1{
+        font-size: 3.5rem;
+        margin-bottom: 0.9rem;
+      }
+      h2{
+        font-size: 2.5rem;
+        font-weight: bolder;
+      }
+      .main-content div[id="content-seperator"]{
+     display: flex;
+     justify-content: space-between;
+     font-size: 1.3rem;
+     opacity: 0.8;
+     margin-bottom: 0.6rem;
+      }
+      div[class="javascript"], li[class="second-list"], #javascript-complier{
+      font-size: 1.8rem;
+      opacity: 0.9;
+      font-family: "Anton SC", sans-serif;
+      line-height: 5.3vmin;
+      word-spacing: 0.7vmin;
+      margin-bottom: 1.3rem;
+      }
+      li[class="second-list"]{
+        position: relative;
+        left: 2vmin;
+        word-wrap: break-word;
+      }
+  
+
+      #link{
+        text-decoration: none;
+        color: #ff2f2f;
+      }
+      #link:hover{
+        text-decoration: underline;
+        color: blueviolet;
+      }
+      .Hello{
+        background-color: white; 
+            color: black;
+             border-radius: 10px;
+             padding: 2rem 2rem; 
+             font-size: 2rem;
+              margin-top: 1rem;
+      }
+      .learn-class, .fundamental-section, .control-flow, .Expression, .promises, .libaries{
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .libaries{
+        flex-shrink: 0;
+      }
+   
+      .learn-class{
+        gap: 2rem;
+      }
+      .learn-ordered{
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+      }
+     
+      p{
+        font-size: 1.91rem;
+        font-weight: 300;
+      }
+      .green{
+        color: #1fcf1fe9;
+        font-size: 1.7rem;
+        text-decoration: underline;
+        cursor: pointer;
+        margin-bottom: 0.5rem;
+        width: max-content;
+      }
+      .green:hover{
+        color: #45ea45;
+      }
+      .learn-links{
+        font-size: 1.82rem;
+      }
+      footer{
+   background-color: rgb(0, 0, 0);
+   padding-bottom: 3rem;
+   filter: grayscale(45%) blur(0.2px);
+   transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+      section[class=grid-1], .grid-2{
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 2.5rem;
+        padding: 3rem 3rem 0.2rem 3rem;
+      }
+      div[class=fr-1]{
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+      }
+      div[class=fr-1_1]{
+        display: flex;
+      }
+      h3{
+        align-self: center;
+        font-size: 2rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+      div[id="fbwhtkig"]{
+        display: flex;
+        justify-content: space-between;
+      }
+      div[id="fbwhtkig"]  a{
+        font-size: 2rem;
+     text-decoration: none;
+     opacity: 0.5;
+     transition: all  linear 200ms;
+      }
+      div[id="fbwhtkig"]  a:hover{
+   /* padding: 1rem; */
+   background-color: #2d2c2c;
+  opacity: 1;
+  padding: 1.5rem;
+  filter: brightness(200%);
+      }
+      footer ul{
+        list-style: none;
+        display: grid;
+        gap: 0.57rem;
+      }
+      div[class="corporate"]{
+        display: flex;
+        gap: 0.5rem;
+      }
+      div[class="corporate-2"]{
+        font-size: 1.3rem;
+      }
+      h4{
+        color: #45ea45cb;
+        font-size: 1.4rem;
+        opacity: 0.8;
+        margin-bottom: 1rem;
+      }
+      li[class="grid-list"]{
+        font-size: 1.08rem;
+      }
+      li[class="grid-list"]:hover{
+        padding: 0.5rem 0;
+        color: #45ea45;
+        cursor: pointer;
+        font-size: 1.2rem;
+      }
+      div[id="fr-hidden"]{
+        visibility: hidden;
+      }
+      @media (max-width: 2300px) {
+        main{
+          margin-bottom: 60rem;
+        }
+      }
+      @media (max-width: 1800px) {
+        main{
+          margin-bottom:40rem;
+        }
+      }
+      @media (max-width: 1400px) {
+        main{
+          margin-bottom: 18rem;
+        }
+      }
+      @media (max-width: 1200px) {
+        main{
+          margin-bottom: 10rem;
+        }
+      }
+      @media  (max-width: 740px){
+        main{
+          margin-bottom: 20vw;
+        }
+        section[class=grid-1], .grid-2{
+        gap: 1.5rem;
+        padding: 2rem 2rem 0.2rem 2rem;
+        
+      }
+
+      }
+      @media  (max-width: 550px) {
+        .header-1{
+            padding:1rem 2rem;
+        }
+        #first-ordered__list,#first-unordered__list{
+            gap: 1.5rem;
+        }
+        section[class=grid-1]{
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr 1fr ;
+        gap: 2.5rem;
+        padding: 3rem 3rem 0.2rem 3rem;
+        
+      }
+      main{
+        margin-bottom: 40vw;
+      }
+      .grid-2{
+        display: grid;
+        gap: 2.5rem;
+        padding: 3rem 3rem 0.2rem 3rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+     div[id=fr-hidden]{
+      display: none;
+     }
+     main{
+        margin-bottom: 40vw;
+      }
+      
+      }
+      @media  (max-width: 490px) {
+        .header-1{
+            padding:1rem 1.5rem;
+        }
+        #first-ordered__list,#first-unordered__list{
+            gap: 1.2rem;
+        }
+        main{
+        margin-bottom: 65vw;
+      }
+    
+      }
+      @media  (max-width: 410px) {
+        .header-1{
+            padding:1rem 1.2rem;
+        }
+        #first-ordered__list,#first-unordered__list{
+            gap: 1.1rem;
+        }
+        section[class=grid-1]{
+        display: grid;
+        grid-template-columns: 3fr 2fr 2fr ;
+        gap: 2.5rem;
+        padding: 3rem 3rem 0.2rem 3rem;
+        
+      }
+      .grid-2{
+        display: grid;
+        gap: 2.5rem;
+        padding: 3rem 3rem 0.2rem 3rem;
+        grid-template-columns: 1fr 1fr 1fr ;
+      }
+      main{
+        margin-bottom: 90vw;
+      }
+        
+      }
+      @media  (max-width: 380px) {
+        .header-1{
+            padding:1rem 1rem;
+        }
+        #first-ordered__list,#first-unordered__list{
+            gap: 1rem;
+        }
+      }
+      @media  (max-width: 350px){
+        main{
+        margin-bottom: 145vw;
+      }
+      }
+      @media  (max-width: 330px) {
+        .header-1{
+            padding:1rem 1.2rem;
+        }
+        #first-ordered__list,#first-unordered__list{
+            gap: 0.8rem;
+        }
+        section[class=grid-1]{
+        display: grid;
+        grid-template-columns: 3fr 2fr 2fr ;
+        gap: 1.2rem;
+        padding: 2rem 2rem 0.2rem 2rem;
+        
+      }
+      .grid-2{
+        display: grid;
+        gap: 1.2rem;
+        padding: 2rem 2rem 0.2rem 2rem;
+        grid-template-columns: 1fr 1fr 1fr ;
+      }
+      
+      }
+      @media  (max-width: 290px) {
+        .header-1{
+            padding:1rem 1rem;
+        }
+        #first-ordered__list,#first-unordered__list{
+            gap: 0.6rem;
+        }
+        section[class=grid-1]{
+        display: grid;
+        grid-template-columns: 3fr 2fr ;
+        gap: 1.2rem;
+        padding: 2rem 2rem 0.2rem 2rem;
+        
+      }
+      .grid-2{
+        display: grid;
+        gap: 1.2rem;
+        padding: 2rem 2rem 0.2rem 2rem;
+        grid-template-columns: 1fr 1fr  ;
+      }
+      main{
+        margin-bottom: 220vw;
+      }
+      }
+      
+      @media  (max-width: 230px) {
+        .header-1{
+            padding:0.8rem 0.8rem;
+        }
+        #first-ordered__list,#first-unordered__list{
+            gap: 0.4rem;
+        }
+        main{
+        margin-bottom: 260vw;
+      }
+      
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <section class="header-1">
+            <nav class="nav-container">
+            <div id="first-unordered__list">
+                <a href="#" class="nav-links">Courses</a>
+                <a href="#" class="nav-links">Tutorials</a>
+                <a href="#" class="nav-links">DSA</a>
+                <a href="#" class="nav-links">Data Science</a>
+                <a href="#" class="nav-links">Web tech</a>
+                <img src="broken compass2.jpg"  class="image" alt="small image" style="border-radius: 50%; aspect-ratio: 16/13; width: 10vmin; ">
+            </div>
+        </nav>
+        <ol id="first-ordered__list">
+            <li class="links">🔍</li>
+            <li class="links">⚡</li>
+            <li class="links link-3" title="switch to lightmode">
+                <select>
+                <option value="darkmode">🖤</option>
+                <option value="lightmode">🤍</option>
+            </select>
+            <span>change background colour</span>
+            </li>
+            <li class="links"><button class="first-button">Sign-up</button></li>
+        </ol>
+        </section>
+        <hr style="height: 1%;"/>
+        <section id="sticky">
+            <div class="sticky-links">Js- notes</div>
+            <div class="sticky-links">Js-tutorials</div>
+            <div class="sticky-links">Js tutorials</div>
+            <div class="sticky-links">Js fire</div>
+            <div class="sticky-links">Js fire</div>
+            <div class="sticky-links">Js ice</div>
+            <div class="sticky-links">Js key-points</div>
+            <div class="sticky-links">Js satisfier</div>
+            <div class="sticky-links">Js dissipater</div>
+            <div class="sticky-links">Js magnet</div>
+            <div class="sticky-links">js derailer</div>
+            <div class="sticky-links">Js finder</div>
+            <div class="sticky-links">Js quick-locator</div>
+            <div class="sticky-links">Js areal</div>
+            <div class="sticky-links">Js jobs</div>
+            <div class="sticky-links">Js weaver</div>
+            <div class="sticky-links">Js Adder</div>
+            <div class="sticky-links">Js rider</div>
+            <div class="sticky-links">Js key-paths</div>
+            <div class="sticky-links">Js qaker</div>
+        </section>
+    </header>
+    <main>
+          <section class="main-content">
+            <section id="content-1">
+                <h1>Javascript Tutorial</h1>
+                <div id="content-seperator">
+                    <div>Last Updated : 18 Dec, 2024</div>
+                    <div style="word-spacing: 2rem; font-size: 1.6rem;">✨ 📫 ✏ 🧨</div>
+                </div>
+                <hr style="height: 1%; border-radius: 2rem; margin-bottom: 0.7rem;">
+                <div class="javascript">JavaScript is a <b>programming language</b> used to create 
+                    dynamic content for websites. It is a <b>lightweight, cross-platform</b> and
+                    <b> single-threaded</b> programming 
+                    language. JavaScript is an <b>interpreted</b> language that executes
+                     code line by line providing more flexibility.</div>
+                     <ul>
+                        <li class="second-list"><a id="link" href="#">HTML</a> adds Structure to a web page, <a id="link" href="#">CSS</a> styles it and  JavaScript
+                             brings it to life by allowing users to interact with elements on the page,
+                             such as actions on clicking buttons, filling out forms, and showing animations.</li>
+                        <li class="second-list">JavaScript on the client side is directly executed in the
+                             user's browser. Almost all browsers have JavaScript Interpreter and do not need to install any software. 
+                            There is also a browser console where you can test your JavaScript code.</li>
+                        <li class="second-list">JavaScript is also used on the Server side (on Web Servers) 
+                            to do operations like accessing
+                             databases, file handling and security features to send responses, to browsers.</li>
+                     </ul>
+            </section>
+            <h2>Hello World Program</h2>
+            <div id="javascript-complier">This JavaScript Compiler is completely free and easy to use. Here, you can practice various JS Exercises.</div>
+            <div style="color: red; padding: 1rem; border: 1px solid #d5d2d2; width: min-content;font-size: 2rem;">javascript</div>
+            <img src="WhatsApp Image 2024-12-11 at 13.24.58_df7cb5c4.jpg" alt="a class image" title="random picture" style="border: 1px solid #d5d2d2;" width="100%" height="10%">
+            <div class="output" style="font-size: 2rem; margin-top: 2rem; font-weight: 900;">Output:</div>
+            <div class="Hello">Hello World!!</div>
+            <section class="learn-class">
+              <h2>Why to learn JavaScript?</h2>
+              <ol class="learn-ordered">
+                <li class="learn-links">
+                <strong>Versatility:</strong> JavaScript can be used to develop (using Election JS) websites, games (Using Phaser and Three.js), mobile apps (using React Native), and more.
+                </li>
+                <li class="learn-links">
+               <strong>Client Side:</strong> JavaScript is the main language for client-side logic and is supported by almost all browsers. There is a big list of frameworks and libraries like React JS, Angular JS, and Vue JS.
+                </li>
+                <li class="learn-links">
+                 <strong>Server-Side:</strong> With runtime environments like Node.js and Frameworks like Express.js, JavaScript is now widely used for building server-side applications.
+                </li>
+                <li class="learn-links">
+                  <strong>Machine Learning:</strong> With Libraries like Tensorflow.JS, JavaScript can be used to develop and train machine learning models. Please refer to ML in JS for details.
+                </li>
+              </ol>
+            </section>
+            <section class="fundamental-section" style="margin-bottom: 1rem;">
+              <h2>Fundamentals</h2>
+              <p>
+                Let's Explore JavaScript's fundamentals: variables, data types, operators, and control flow for web page dynamism.
+              </p>
+              <ul>
+              <li class="green" id="fundamental-link">Introduction</li>
+              <li class="green" id="fundamental-link">First Program</li>
+              <li class="green" id="fundamental-link">Comments</li>
+              <li class="green" id="fundamental-link">Datatypes</li>
+              <li class="green" id="fundamental-link">Variables</li>
+              <li class="green" id="fundamental-link">Using Js In HTML</li>
+              <li class="green" id="fundamental-link">Interesting facts about JS</li>
+              <li class="green" id="fundamental-link">Browser Control</li>
+              <li class="green" id="fundamental-link">Versions</li>
+              </ul>
+            </section>
+            <img src="WhatsApp Image 2024-12-11 at 13.24.58_df7cb5c4.jpg" alt="fine little picture"  style="width: 100%; height: 6%;">
+            <section class="control-flow">
+              <h2>Control Flow and Loops</h2>
+              <p>These are the backbone of JavaScript which everyone must have clear understanding.</p>
+              <ul>
+             <li class="green" id="control-link">Control flow statements</li>
+             <li class="green" id="control-link">Js loops</li>
+             <li class="green" id="control-link">Js label statements</li>
+              </ul>
+            </section>
+            <section class="Expression">
+              <h2>Expression Operator</h2>
+              <p>You'll learn the syntax and usage of expressions, which are combinations of values, variables, operators, and functions that produce a result.</p>
+              <ul>
+             <li class="green" id="Expression-link">Lorem, ipsum dolor.</li>
+             <li class="green" id="Expression-link">Lorem, ipsum dolor.</li>
+             <li class="green" id="Expression-link">Lorem, ipsum dolor.</li>
+             <li class="green" id="Expression-link">Lorem, ipsum dolor.</li>
+             <li class="green" id="Expression-link">Lorem, ipsum dolor.</li>
+             <li class="green" id="Expression-link">Lorem, ipsum dolor.</li>
+             <li class="green" id="Expression-link">Lorem, ipsum dolor.</li>
+             <li class="green" id="Expression-link">Lorem, ipsum dolor.</li>
+             <li class="green" id="Expression-link">Lorem, ipsum dolor.</li>
+              </ul>
+            </section>
+            <section class="promises">
+              <h2>Promises</h2>
+              <p>JS Promises provide a cleaner and more intuitive way to work with asynchronous code compared to traditional callback-based approaches.</p>
+              <ul>
+                <li class="green" id="promises-links">Js restuin</li>
+                <li class="green" id="promises-links">JS restiun</li>
+                <li class="green" id="promises-links">JS rwwss</li>
+                <li class="green" id="promises-links">Js ewswer</li>
+              </ul>
+            </section>
+            <section class="libaries">
+              <h1 style="text-align: center; font-family: 'Times New Roman', Times, serif;">LIbaries  And Framework</h1>
+              <p>JavaScript libraries and frameworks play a important role in modern web development. They offer built-in functions and methods that enhance web pages, making them more dynamic and interactive. They handle repetitive tasks, allowing developers to focus on core functionality.
+                Also, they provide project structure and data flow structure that helps to create fast and more reliable applications.</p>
+            </section>
+          </section>
+    </main>
+    <footer>
+      <section class="grid-1">
+        <div class="fr-1">
+          <div class="fr-1_1">
+            <img src="broken compass2.jpg"  class="image" alt="small image" style="border-radius: 50%; aspect-ratio: 16/13; width: 10vmin; "/>
+            <h3>  GEEKS FOR GEEKS </h3>
+          </div>
+          <div class="corporate">
+            <div class="corporate-1">🚌</div>
+            <div class="corporate-2">Corporate & Communications Address:- A-143, 7th Floor, Sovereign Corporate Tower, Sector- 136, Noida, Uttar Pradesh (201305) | Registered Address:- K 061, Tower K, Gulshan Vivante Apartment, Sector 137, Noida, Gautam Buddh Nagar, Uttar Pradesh, 201305</div>
+          </div>
+          <div id="fbwhtkig">
+            <a href="https://www.instagram.com/" title="instagram">🎹</a>
+            <a href="https://en-gb.facebook.com/" title="facebook">😟</a>
+            <a href="https://web.whatsapp.com/" title="whatsapp">❔</a>
+            <a href="https://www.tiktok.com/en/" title="tiktok">✅</a>
+          </div>
+        </div>
+        <div class="fr-2">
+          <h4>Companies</h4>
+          <ul>
+            <li class="grid-list">Training</li>
+            <li class="grid-list">Board</li>
+            <li class="grid-list">Staff</li>
+            <li class="grid-list">Dear</li>
+            <li class="grid-list">Customs</li>
+            <li class="grid-list">Matriculation</li>
+            <li class="grid-list">Pulpils</li>
+            <li class="grid-list">Class</li>
+            <li class="grid-list">Tears</li>
+          </ul>
+        </div>
+        <div class="fr-3">
+          <h4>Languages</h4>
+          <ul>
+            <li class="grid-list">English</li>
+            <li class="grid-list">French</li>
+            <li class="grid-list">Yoruba</li>
+            <li class="grid-list">Spanish</li>
+            <li class="grid-list">Britsih</li>
+            <li class="grid-list">Igbo</li>
+            <li class="grid-list">Hausa</li>
+            <li class="grid-list">Igala</li>
+            <li class="grid-list">Czech</li>
+          </ul>
+        </div>
+        <div class="fr-4">
+          <h4>DSA</h4>
+          <ul>
+            <li class="grid-list">Computer Analyst</li>
+            <li class="grid-list">Videographing</li>
+            <li class="grid-list">Mollusecs</li>
+            <li class="grid-list">Graphic Designing</li>
+            <li class="grid-list">Publishing</li>
+            <li class="grid-list">Creaming</li>
+            <li class="grid-list">Duiring</li>
+            <li class="grid-list">Singing</li>
+            <li class="grid-list">Runing</li>
+          </ul>
+        </div>
+        <div class="fr-5">
+          <h4>Data Science & ML</h4>
+          <ul>
+            <li class="grid-list">Data science and Python</li>
+            <li class="grid-list">Algorithms</li>
+            <li class="grid-list">DSA</li>
+            <li class="grid-list">Beginners</li>
+            <li class="grid-list">Basic DSA</li>
+            <li class="grid-list">Fulfillment</li>
+            <li class="grid-list">Magical Science</li>
+            <li class="grid-list">Pandas</li>
+            <li class="grid-list">Deep learning</li>
+          </ul>
+        </div>
+        <div class="fr-6">
+          <h4>Web technologies</h4>
+          <ul>
+            <li class="grid-list">Colours</li>
+            <li class="grid-list">How to be brave</li>
+            <li class="grid-list">when you know</li>
+            <li class="grid-list">sia </li>
+            <li class="grid-list">yinka</li>
+            <li class="grid-list">React Js </li>
+            <li class="grid-list">Now Js</li>
+            <li class="grid-list">Fire tutorial</li>
+            <li class="grid-list">rew</li>
+          </ul>
+        </div>
+        <div class="fr-7">
+          <h4>Python Tutorial</h4>
+          <ul>
+            <li class="grid-list">HTML</li>
+            <li class="grid-list">CSS</li>
+            <li class="grid-list">JAVASCRIPT</li>
+            <li class="grid-list">NODE JS</li>
+            <li class="grid-list">REACT</li>
+            <li class="grid-list">REACT JS</li>
+            <li class="grid-list">MISSSLES</li>
+            <li class="grid-list">FINALLY </li>
+            <li class="grid-list">DONE WITH THIS</li>
+          </ul>
+        </div>
+      
+      </section>
+      <section class="grid-1 grid-2">
+        <div class="fr-1" id="fr-hidden">
+          <div class="fr-1_1">
+            <img src="broken compass2.jpg"  class="image" alt="small image" style="border-radius: 50%; aspect-ratio: 16/13; width: 10vmin; "/>
+            <h3>  GEEKS FOR GEEKS </h3>
+          </div>
+          <div class="corporate">
+            <div class="corporate-1">🚌</div>
+            <div class="corporate-2">Corporate & Communications Address:- A-143, 7th Floor, Sovereign Corporate Tower, Sector- 136, Noida, Uttar Pradesh (201305) | Registered Address:- K 061, Tower K, Gulshan Vivante Apartment, Sector 137, Noida, Gautam Buddh Nagar, Uttar Pradesh, 201305</div>
+          </div>
+          <div id="fbwhtkig">
+            <a href="https://www.instagram.com/" title="instagram">🎹</a>
+            <a href="https://en-gb.facebook.com/" title="facebook">😟</a>
+            <a href="https://web.whatsapp.com/" title="whatsapp">❔</a>
+            <a href="https://www.tiktok.com/en/" title="tiktok">✅</a>
+          </div>
+        </div>
+        <div class="fr-2">
+          <h4>Companies</h4>
+          <ul>
+            <li class="grid-list">Training</li>
+            <li class="grid-list">Board</li>
+            <li class="grid-list">Staff</li>
+            <li class="grid-list">Dear</li>
+            <li class="grid-list">Customs</li>
+            <li class="grid-list">Matriculation</li>
+            <li class="grid-list">Pulpils</li>
+            <li class="grid-list">Class</li>
+            <li class="grid-list">Tears</li>
+          </ul>
+        </div>
+        <div class="fr-3">
+          <h4>Languages</h4>
+          <ul>
+            <li class="grid-list">English</li>
+            <li class="grid-list">French</li>
+            <li class="grid-list">Yoruba</li>
+            <li class="grid-list">Spanish</li>
+            <li class="grid-list">Britsih</li>
+            <li class="grid-list">Igbo</li>
+            <li class="grid-list">Hausa</li>
+            <li class="grid-list">Igala</li>
+            <li class="grid-list">Czech</li>
+          </ul>
+        </div>
+        <div class="fr-4">
+          <h4>DSA</h4>
+          <ul>
+            <li class="grid-list">Computer Analyst</li>
+            <li class="grid-list">Videographing</li>
+            <li class="grid-list">Mollusecs</li>
+            <li class="grid-list">Graphic Designing</li>
+            <li class="grid-list">Publishing</li>
+            <li class="grid-list">Creaming</li>
+            <li class="grid-list">Duiring</li>
+            <li class="grid-list">Singing</li>
+            <li class="grid-list">Runing</li>
+          </ul>
+        </div>
+        <div class="fr-5">
+          <h4>Data Science & ML</h4>
+          <ul>
+            <li class="grid-list">Data science and Python</li>
+            <li class="grid-list">Algorithms</li>
+            <li class="grid-list">DSA</li>
+            <li class="grid-list">Beginners</li>
+            <li class="grid-list">Basic DSA</li>
+            <li class="grid-list">Fulfillment</li>
+            <li class="grid-list">Magical Science</li>
+            <li class="grid-list">Pandas</li>
+            <li class="grid-list">Deep learning</li>
+          </ul>
+        </div>
+        <div class="fr-6">
+          <h4>Web technologies</h4>
+          <ul>
+            <li class="grid-list">Colours</li>
+            <li class="grid-list">How to be brave</li>
+            <li class="grid-list">when you know</li>
+            <li class="grid-list">sia </li>
+            <li class="grid-list">yinka</li>
+            <li class="grid-list">React Js </li>
+            <li class="grid-list">Now Js</li>
+            <li class="grid-list">Fire tutorial</li>
+            <li class="grid-list">rew</li>
+          </ul>
+        </div>
+        <div class="fr-7">
+          <h4>Python Tutorial</h4>
+          <ul>
+            <li class="grid-list">HTML</li>
+            <li class="grid-list">CSS</li>
+            <li class="grid-list">JAVASCRIPT</li>
+            <li class="grid-list">NODE JS</li>
+            <li class="grid-list">REACT</li>
+            <li class="grid-list">REACT JS</li>
+            <li class="grid-list">MISSSLES</li>
+            <li class="grid-list">FINALLY </li>
+            <li class="grid-list">DONE WITH THIS</li>
+          </ul>
+        </div>
+      
+      </section>
+    </footer>
+</body>
+</html>
+<!-- SHANSOME YOU HAVE TRY -->
